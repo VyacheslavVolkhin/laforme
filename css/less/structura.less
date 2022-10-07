@@ -63,6 +63,56 @@ html {
 		flex-shrink: 0;
 	}
 }
+.wrap-header-light {
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        .header-menu-wrap {
+            .btn.button-type-border {
+                &:not(:hover, .active) {
+                    border-color: #fff;
+                    color: #fff;
+                    .button-ico {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
+        .logo {
+            color: #fff;
+        }
+        .elm-unit {
+            background: rgba(255, 255, 255, 0.04);
+            color: #fff;
+        }
+        .location-wrap {
+            .elm-ico {
+                filter: brightness(0) invert(1);
+            }
+            .btn-location {
+                &:before {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+        .btn-header {
+            color: #fff;
+            .button-ico {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    .popup-menu-wrap {
+        .btn-action-ico.ico-menu {
+            &:after, &:before {
+                border-color: #fff;
+            }
+        }
+    }
+}
 .nav,
 .header,
 .footer {
@@ -76,6 +126,11 @@ html {
 			display: none;
 		}
 	}
+    li {
+        &:first-letter {
+            padding-left: 0;
+        }
+    }
 	a {
 		text-decoration: none;
 		position: relative;
@@ -370,6 +425,11 @@ html {
                 width: 100%;
                 padding: 29px 10px 4px 10px;
                 white-space: normal;
+                text-align: center;
+                .button-title {
+                    display: block;
+                    text-align: center;
+                }
                 .button-ico {
                     position: absolute;
                     top: 4px;
@@ -583,6 +643,11 @@ html {
     }
 }
 @media (min-width: 1024px) {
+    .wrap-header-light {
+        .popup-menu-wrap {
+            display: none;
+        }
+    }
     .header {
         margin-bottom: 20px;
         .inner-wrap {

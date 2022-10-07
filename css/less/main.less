@@ -1,11 +1,12 @@
 :root {
 	--clr-base: #000000;
+    --clr-title: #001A34;
 	--clr-att: #C64034;
 	--clr-att-hover: #f47064;
 	--clr-att-second: #3D5165;
 	--clr-light: #e4e4e;
 
-	--min: 365px;
+	--min: 360px;
 	--max: 1500px;
     
     --paddingContainer: 10px;
@@ -41,6 +42,21 @@ p, ul, ol, table, blockquote, .bq-text {
 }
 li {
 	position: relative;
+    &:before {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        background-color: var(--clr-base);
+        border-radius: 2px;
+        position: absolute;
+        top: 10/14em;
+        left: 1;
+        margin-top: -2px;
+    }
+    &:first-letter {
+        padding-left: 10px;
+    }
 }
 a {
     text-decoration: none;
@@ -59,6 +75,7 @@ a.link-main, .link-main {
 .link-phone {
     white-space: nowrap;
 }
+.page-inner-title,
 .page-title,
 h1, .h1-title,
 h2, .h2-title,
@@ -74,6 +91,13 @@ h6, .h6-title {
         margin-top: 0;
     }
 }
+.page-inner-title {
+    font-size: 20px;
+    line-height: 27/20;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    color: var(--clr-title);
+}
 .page-title {
     font-size: 24px;
     line-height: 32/24;
@@ -86,6 +110,29 @@ h6, .h6-title {
 }
 .text-center, .title-center {
     text-align: center;
+}
+table {
+    &.tbl-features {
+        margin-bottom: 15px;
+        tbody {
+            th, td {
+                border: none;
+                vertical-align: top;
+                padding: 0 10px 5px 0;
+                font-size: 12px;
+                line-height: 16/12;
+                font-weight: 400;
+                color: var(--clr-base);
+                text-align: left;
+                &:last-child {
+                    padding-right: 0;
+                }
+                &:first-child {
+                    color: var(--clr-att-second);
+                }
+            }
+        }
+    }
 }
 @media (max-width: 1399px) {
     :root {

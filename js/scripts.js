@@ -21,6 +21,13 @@ $(document).ready(function(){
 	};
 
 
+    //file input 
+    $('.js-field-file .js-file-button').on('click', function () {
+        $(this).parent().find('input').click();
+        return false;
+    })
+
+
     //btn tgl
     $('body').on('click', '.js-btn-tgl', function () {
         $(this).toggleClass('active');
@@ -203,6 +210,32 @@ $(document).ready(function(){
                     settings: {
                         slidesToShow: 2,
                         dots: true,
+                        prevArrow: '<span class="btn-action-ico ico-arrow ico-arrow-second ico-arrow-prev"></span>',
+                        nextArrow: '<span class="btn-action-ico ico-arrow ico-arrow-second ico-arrow-next"></span>',
+                    }
+                },
+            ]
+        });
+    }
+
+
+    //item-tile-review
+    if (!!$('.item-tile-review').offset()) {
+        $('.item-tile-review .slider').slick({
+            dots: false,
+            slidesToShow: 1,
+            variableWidth: true,
+            infinite: false,
+            adaptiveHeight: false,
+            prevArrow: false,
+            nextArrow: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        dots: true,
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
                         prevArrow: '<span class="btn-action-ico ico-arrow ico-arrow-second ico-arrow-prev"></span>',
                         nextArrow: '<span class="btn-action-ico ico-arrow ico-arrow-second ico-arrow-next"></span>',
                     }
