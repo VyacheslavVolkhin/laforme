@@ -91,6 +91,28 @@ select::-ms-expand {
         background-color: var(--clr-att-hover);
         border-color: var(--clr-att-hover);
     }
+    &.button-ico-toggle {
+        padding: 0 45px 0 25px;
+        &:before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            margin: -11px -12px 0 0;
+            transition: all ease 0.2s;
+            background: url(../img/icons/arrow-tgl.svg) center no-repeat;
+            background-size: 10px auto;
+        }
+        &.active {
+            &:before {
+                .t-rotate(180deg);
+                top: -12px;
+            }
+        }
+    }
     &.button-type-border {
         background-color: transparent;
         color: var(--clr-att);
@@ -324,6 +346,22 @@ select::-ms-expand {
         margin-top: -8px;
         transition: all ease 0.2s;
         filter: brightness(0) grayscale(1);
+        &.ico-center {
+            top: 50%;
+        }
+        &.ico-large {
+            width: 24px;
+            height: 24px;
+            left: 12px;
+            margin-left: -14px;
+            margin-top: -12px;
+            &~.button-title {
+                padding-left: 4px;
+            }
+        }
+        &.ico-att {
+            filter: none;
+        }
     }
     .button-title {
         display: block;
@@ -341,6 +379,73 @@ select::-ms-expand {
         .button-ico {
             filter: none;
         }
+    }
+}
+.frm-field-phone {
+    position: relative;
+    overflow: hidden;
+    &.active {
+        .field-button {
+            display: none;
+        }
+    }
+    &:not(.active) {
+        display: inline-flex;
+        justify-content: center;
+        &:hover {
+            .btn {
+                color: #fff;
+                background-color: var(--clr-att-hover);
+                border-color: var(--clr-att-hover);
+            }
+        }
+        .field-phone {
+            max-width: 115px;
+            flex-shrink: 0;
+            .btn {
+                border-radius: 8px 0 0 8px;
+                pointer-events: none;
+                padding-right: 0;
+            }
+        }
+        .field-button {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            .btn {
+                border-radius: 0 8px 8px 0;
+                padding-left: 15px;
+                overflow: visible;
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -200px;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .field-phone {
+        font-size: 14px;
+        .btn {
+            .button-title {
+            white-space: nowrap;
+            display: block;
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        }
+    }
+    .btn {
+        height: 39px;
+        padding: 0 30px;
+        font-size: 12px;
+        transition-property: background, border-color;
     }
 }
 .frm-row,
