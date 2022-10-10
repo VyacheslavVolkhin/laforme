@@ -598,6 +598,10 @@ body {
   .header-fixed .header {
     z-index: 99;
   }
+  .header-fixed .header .logo-wrap {
+    width: 86px;
+    height: 40px;
+  }
   .header-fixed .header .header-top-wrap {
     margin-bottom: 0;
   }
@@ -610,8 +614,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--clr-att);
+    background-color: #fff;
     padding: 60px 10px 10px 10px;
+    border-bottom: 1px solid var(--clr-att);
   }
   .header-fixed .header .action-cart,
   .header-fixed .header .action-login {
@@ -624,27 +629,23 @@ body {
     right: 20px;
     z-index: 22;
   }
-  .header-fixed .header .action-cart .btn-header .button-ico,
-  .header-fixed .header .action-login .btn-header .button-ico {
-    -webkit-filter: brightness(0) invert(1);
-            filter: brightness(0) invert(1);
-  }
-  .header-fixed .header .action-cart .btn-header[data-counter]:after,
-  .header-fixed .header .action-login .btn-header[data-counter]:after {
-    background-color: #fff;
-    color: var(--clr-att);
-  }
   .header-fixed .header .action-login .btn-header {
     right: 60px;
   }
   .header-fixed .header .popup-menu-wrap {
     position: fixed;
     top: 29px;
+    left: 70px;
     z-index: 21;
   }
-  .header-fixed .header .popup-menu-wrap .btn-action-ico.ico-menu:after,
-  .header-fixed .header .popup-menu-wrap .btn-action-ico.ico-menu:before {
-    border-color: #fff;
+  .header-fixed .header .popup-menu-wrap .popup-content-block {
+    left: -50px;
+  }
+  .header-fixed .header .logo {
+    position: fixed;
+    top: 9px;
+    left: 10px;
+    z-index: 21;
   }
   .footer .logo {
     font-size: 13px;
@@ -940,7 +941,7 @@ body {
 }
 @media (min-width: 640px) and (max-width: 1023px) {
   .header-fixed .header .search-wrap {
-    padding: 11px 100px 11px 50px;
+    padding: 11px 100px 11px 100px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
