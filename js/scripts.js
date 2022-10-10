@@ -405,6 +405,18 @@ $(document).ready(function(){
             return false;
         })
     }
-    
+
+
+    if (!!$('.wrap').offset()) {
+        let stickyTop = $('.wrap').offset().top + 150;
+        $(window).scroll(function () {
+            let windowTop = $(window).scrollTop();
+            if (stickyTop < windowTop) {
+                $('.wrap').addClass('header-fixed');
+            } else {
+                $('.wrap').removeClass('header-fixed');
+            }
+        });
+    }
 	
 });

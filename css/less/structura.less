@@ -362,6 +362,57 @@ html {
     }
 }
 @media (max-width: 1023px) {
+    .header-fixed {
+        .header {
+            z-index: 99;
+            .header-top-wrap {
+                margin-bottom: 0;
+            }
+            .inner-wrap {
+                padding-bottom: 48px;
+            }
+            .search-wrap {
+                z-index: 20;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: var(--clr-att);
+                padding: 60px 10px 10px 10px;
+            }
+            .action-cart, .action-login {
+                height: 40px;
+                .btn-header {
+                    position: fixed;
+                    top: 9px;
+                    right: 20px;
+                    z-index: 22;
+                    .button-ico {
+                        filter: brightness(0) invert(1);
+                    }
+                    &[data-counter]:after {
+                        background-color: #fff;
+                        color: var(--clr-att);
+                    }
+                }
+            }
+            .action-login {
+                .btn-header {
+                    right: 60px;
+                }
+            }
+            .popup-menu-wrap {
+                position: fixed;
+                top: 29px;
+                z-index: 21;
+                .btn-action-ico.ico-menu {
+                    &:after, &:before {
+                        border-color: #fff;
+                    }
+                }
+            }
+        }
+    }
     .footer {
         .logo {
             font-size: 13px;
@@ -626,6 +677,15 @@ html {
         }
     }
 }
+@media (min-width: 640px) and (max-width: 1023px) {
+    .header-fixed {
+        .header {
+            .search-wrap {
+                padding: 11px 100px 11px 50px;
+            }
+        }
+    }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
     .footer {
         .inner-wrap {
@@ -643,6 +703,9 @@ html {
     }
 }
 @media (min-width: 1024px) {
+    .header-fixed {
+        
+    }
     .wrap-header-light {
         .popup-menu-wrap {
             display: none;
