@@ -5029,26 +5029,6 @@ body {
   .photos-slider-box .sl-wrap .elm-photo {
     aspect-ratio: 0.76470588;
   }
-  .photos-slider-box .slider-dots .slick-list,
-  .photos-slider-box .slider-dots .slick-track {
-    pointer-events: none;
-    -webkit-transform: none !important;
-            transform: none !important;
-    width: 140px !important;
-    margin-left: auto;
-    margin-right: auto;
-    height: 42px !important;
-    overflow: hidden;
-  }
-  .photos-slider-box .slider-dots .ico-arrow {
-    display: none !important;
-  }
-  .photos-slider-box .slider-dots .slick-slide {
-    display: none;
-  }
-  .photos-slider-box .slider-dots .slick-slide.slick-active {
-    display: block;
-  }
   .photos-slider-box .slick-dots {
     display: block;
     width: 140px;
@@ -5093,7 +5073,7 @@ body {
     width: auto;
     font-size: 1em;
   }
-  .photos-slider-box .slick-dots li .elm-photo {
+  .photos-slider-box .slick-dots li button {
     background: none;
     border: none;
     border-radius: 0;
@@ -5108,15 +5088,11 @@ body {
     width: auto;
     height: auto;
   }
-  .photos-slider-box .slick-dots li .elm-photo:before,
-  .photos-slider-box .slick-dots li .elm-photo img {
-    display: none;
-  }
-  .photos-slider-box .slick-dots li .elm-photo:hover {
+  .photos-slider-box .slick-dots li button:hover {
     background-color: transparent;
     color: var(--clr-att);
   }
-  .photos-slider-box .slick-dots li.slick-active .elm-photo {
+  .photos-slider-box .slick-dots li.slick-active button {
     display: inline;
     background-color: transparent !important;
   }
@@ -6023,8 +5999,8 @@ body {
   .photos-slider-box .slider-dots .ico-arrow {
     position: absolute;
     top: -35px;
-    left: 50%;
-    margin-left: -20px;
+    left: 27px;
+    margin-left: -23px;
   }
   .photos-slider-box .slider-dots .ico-arrow-down {
     top: auto;
