@@ -121,6 +121,42 @@ $(document).ready(function(){
 			$(this).addClass('active').next('.js-tab-content').slideDown(200);
 		}
 	})
+    
+    //frm-select-toggle
+    $('.frm-select-toggle .btn-toggle').on('click', function() {
+        $(this).parents('.frm-select-toggle').toggleClass('active');
+        return false;
+    })
+    
+    //order-bonuses-box
+    $('.order-bonuses-box .btn-edit').on('click', function() {
+        $(this).toggleClass('active').parents('.form-outer-wrap').toggleClass('form-open')
+        return false;
+    })
+
+
+    //content toggle action
+    $('input[data-content]').each(function () {
+        if ($(this).is(':checked')) {
+            let selectContent = $(this).attr('data-content');
+            $('.frm-content[data-content="' + selectContent + '"]').addClass('active');
+        }
+    })
+    $('input[data-content]').on('click', function () {
+        $('.frm-content.active').removeClass('active');
+        $('input[data-content]').each(function () {
+            if ($(this).is(':checked')) {
+                let selectContent = $(this).attr('data-content');
+                $('.frm-content[data-content="' + selectContent + '"]').addClass('active');
+            }
+        })
+    })
+    $('.btn[data-content]').on('click', function () {
+        let dataContent = $(this).attr('data-content');
+        $(this).attr('disabled', 'disabled');
+        $('.frm-content[data-content="' + dataContent + '"]').slideDown(200);
+        return false;
+    })
 
 
     //actions-sliders-box
