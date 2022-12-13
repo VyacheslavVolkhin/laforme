@@ -1071,6 +1071,37 @@
     border: 1px solid rgba(204, 214, 228, 0.6);
     border-radius: 16px;
     padding: 9px 12px;
+    &.tile-bg {
+        background-color: #F4F8FB;
+        border-color: #F4F8FB;
+    }
+    &.tile-cashback {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        .tile-total {
+            display: block;
+            flex-shrink: 0;
+            padding: 0 15px 0 0;
+            font-size: 48px;
+            line-height: 65/48;
+            font-weight: bold;
+            color: #FF4F40;
+        }
+        .tile-title {
+            flex: 1;
+            display: block;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            line-height: 22/16;
+            letter-spacing: -0.01em;
+            font-weight: 400;
+            color: #000;
+        }
+    }
     .tile-title-wrap {
         display: flex;
         margin-bottom: 10px;

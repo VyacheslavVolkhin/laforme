@@ -159,6 +159,29 @@ $(document).ready(function(){
     })
 
 
+    //popups
+    let popupCurrent;
+    $('.js-popup-open').on('click', function () {
+        $('.popup-outer-box').removeClass('active');
+        $('body').addClass('popup-open');
+        popupCurrent = $(this).attr('data-popup');
+        $('.popup-outer-box[id="' + popupCurrent + '"]').addClass('active');
+        return false;
+    })
+    $('.popup-outer-box').on('click', function() {
+        $('.popup-outer-box').click(function(event) {
+            if ($(event.target).closest(".popup-box").length) return;
+            $('body').removeClass('popup-open');
+            $('.popup-outer-box').removeClass('active');
+        });
+    })
+    $('.js-popup-close').on('click', function () {
+        $('body').removeClass('popup-open');
+        $('.popup-outer-box').removeClass('active');
+        return false;
+    })
+
+
     //actions-sliders-box
     if (!!$('.actions-sliders-box').offset()) {
         $('.actions-sliders-box .slider').slick({
@@ -488,3 +511,47 @@ $(document).ready(function(){
     }
 	
 });
+
+//main-slider-box
+if (!!$('.main-slider-box').offset()) {
+    $('.main-slider-box .slider').slick({
+        dots: false,
+        slidesToShow: 1,
+        variableWidth: false,
+        autoplay: true,
+        autoplaySpeed: true,
+        infinite: true,
+        adaptiveHeight: false,
+        prevArrow: '<span class="btn-action-ico ico-arrow ico-arrow-main ico-arrow-prev"></span>',
+        nextArrow: '<span class="btn-action-ico ico-arrow ico-arrow-main ico-arrow-next"></span>',
+        responsive: [
+            {
+                breakpoint: 1700,
+                settings: {
+                    dots: true,
+                    //prevArrow: false,
+                    //nextArrow: false,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    dots: true,
+                    //prevArrow: false,
+                    //nextArrow: false,
+                    adaptiveHeight: true,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: true,
+                    prevArrow: false,
+                    nextArrow: false,
+                    adaptiveHeight: true,
+                }
+            },
+        ]
+    });
+}
+    

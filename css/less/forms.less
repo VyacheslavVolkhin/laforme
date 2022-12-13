@@ -158,6 +158,18 @@ select::-ms-expand {
         height: 24px;
         filter: brightness(0) invert(1);
     }
+    &.button-clear {
+        &:not(:hover) {
+            border-color: transparent;
+            background-color: transparent;
+            color: var(--clr-base);
+        }
+        &:hover {
+            border-color: transparent;
+            background-color: transparent;
+            color: var(--clr-att);
+        }
+    }
 }
 .btn-action-ico {
     min-width: 0;
